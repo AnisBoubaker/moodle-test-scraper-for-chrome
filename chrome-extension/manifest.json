@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Moodle Attempt Exporter",
+  "version": "1.4.0",
+  "description": "Export a Moodle results page or an individual review to a local exam JSON file.",
+  "minimum_chrome_version": "121",
+  "permissions": ["activeTab", "scripting"],
+  "action": { "default_title": "Export Moodle attempt" },
+  "background": { "service_worker": "background.mjs", "type": "module" }
+}

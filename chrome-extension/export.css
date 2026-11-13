@@ -1,0 +1,78 @@
+:root {
+  color-scheme: light dark;
+  font: 16px/1.5 Inter, system-ui, sans-serif;
+  --background: #f4f3ee;
+  --surface: #fffefa;
+  --text: #202727;
+  --muted: #536160;
+  --border: #d9e0db;
+  --accent: #1d5c4e;
+  --button-text: #fff;
+  --error: #a43128;
+  background: var(--background);
+  color: var(--text);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #151d1a;
+    --surface: #202b26;
+    --text: #edf5ef;
+    --muted: #bccdc3;
+    --border: #3c5146;
+    --accent: #a6dfca;
+    --button-text: #13271f;
+    --error: #ffb1a6;
+  }
+}
+
+body { margin: 0; }
+
+main {
+  box-sizing: border-box;
+  width: min(100%, 45rem);
+  margin: clamp(2rem, 9vh, 6rem) auto;
+  padding: 0 1.25rem;
+}
+
+h1 { margin: 0 0 1rem; font-size: clamp(1.8rem, 5vw, 2.6rem); line-height: 1.12; letter-spacing: -.045em; }
+h2 { margin: 0 0 1.2rem; font-size: 1.2rem; font-weight: 650; overflow-wrap: anywhere; }
+
+section {
+  padding: clamp(1rem, 4vw, 1.75rem);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+}
+
+dl { display: flex; flex-wrap: wrap; gap: .9rem 2rem; margin: 0 0 1.4rem; }
+dt, .label { color: var(--muted); font-size: .82rem; font-weight: 650; }
+dd { margin: .18rem 0 0; overflow-wrap: anywhere; }
+
+.destination {
+  display: grid;
+  gap: .2rem;
+  padding: .9rem 0;
+  border-block-start: 1px solid var(--border);
+  overflow-wrap: anywhere;
+}
+
+.actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .35rem; }
+
+button, .action-link {
+  padding: .55rem .9rem;
+  font: inherit;
+  font-weight: 650;
+  border: 1px solid var(--border);
+  border-radius: .5rem;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.action-link { text-decoration: none; }
+button:focus-visible, .action-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+button:disabled { opacity: .5; cursor: default; }
+button.primary { border-color: var(--accent); background: var(--accent); color: var(--button-text); }
+#status { margin: 1rem 0 0; color: var(--muted); }
+#status[data-error] { color: var(--error); }
